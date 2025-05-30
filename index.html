@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Calculator</title>
+       <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+      <body class="overflow-x-hidden bg-gradient-to-r from-transparent to-indigo-500">
+        <section>
+           <h1 class="text-center text-blue-600 text-3xl"><strong class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-400 to-green-500">Expense Calculator</strong></h1>
+            <div class=" flex item-center justify-center mt-8 p-8 gap-4 w-1/2 mx-auto">
+                <div class=" flex justify-center  flex-col border-2 bg-gray-50 rounded-lg px-4 py-2 ">
+                    <label>Total Income</label>
+                    <p id="t_income">0.00</p>
+                </div>
+                  <div class=" flex justify-center flex-col border-2 bg-gray-50 rounded-lg bg- px-4 py-2 ">
+                    <label>Total Expense</label>
+                    <p id="t_expense">0.00</p>
+                </div>
+                  <div class=" flex justify-center flex-col border-2 bg-gray-50 rounded-lg px-4 py-2 ">
+                    <label>Net Balance</label>
+                    <p id="n_balance">0.00</p>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col mx-auto">
+        <div class="w-1/2 mx-auto">
+            <h1 class="mt-8 mx-4  text-center text-gray-700 text-2xl "> Add Income and Expense Details</h1>
+                    <form onsubmit="dataSubmit(); return false;">
+            <div class=" mx-4 mt-4 flex flex-col flex-wrap justify-center item-center bg-purple-500 gap-2 px-16 py-4">
+                <label for="">Amount</label>
+                <input type="number" class="bg-gray-200 p-4" placeholder="Enter Amount" value="" id="income" required>
+                 <label for="">Type</label>
+                <select id="amount_type" name="a_type" class=" p-4" required    >
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
+                </select>
+                <label for="">Description</label>
+                <input type="text" class="bg-gray-200 p-4" value=""  placeholder="Enter Description" id="desc" required>
+                    <label for="">Date</label>
+                <input type="date" class="bg-gray-200 p-4"  placeholder="Select Date" value="" id="date" required>
+                <div class="flex justify-between m-2">
+                      <input type="submit" class="rounded-lg bg-gray-400  px-4 py-2" value="Add" />
+              <input type="reset" class="rounded-lg bg-gray-400  px-4 py-2" value="Reset" />
+                </div>
+              
+            </div>
+            
+        </form>
+    </div>
+        <div class=" w-1/2 mx-auto ">
+            <form name="myForm" onSubmit="filterList(); return false;">
+                 
+                <div class="flex justify-center flex-wrap space-x-8 m-4 ">
+                    <div class="flex">
+                        <input id="'inline-radio" type="radio" name="filter" value="all" checked="true"  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"/>
+     <label for="inline-radio" class="ms-2  text-sm font-medium text-gray-900 dark:text-gray-300">All</label>
+                    </div>
+                    <div class="flex">
+                        <input id="'inline-2-radio" type="radio" name="filter" value="Income"   class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"/>
+     <label for="inline-2-radio" class="ms-2  text-sm font-medium text-gray-900 dark:text-gray-300">Income</label>
+                    </div>
+                    <div class="flex">
+                        <input id="'inline-3-radio" type="radio" name="filter" value="Expense"  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"/>
+     <label for="inline-3-radio" class="ms-2  text-sm font-medium text-gray-900 dark:text-gray-300">Expense</label>
+                    </div>
+                    
+  <div class="flex">
+  <input type="submit" class="rounded-lg bg-gray-50  px-4 py-2" value="Filter" />
+  </div>
+  
+                </div>
+            </form>
+              <div class="relative mx-4 mb-4">
+          <table id="myTable"
+            class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-2"
+          >
+            
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3 hidden">Id</th>
+                <th scope="col" class="px-6 py-3">Amount</th>
+                
+                <th scope="col" class="px-6 py-3">Description</th>
+                  <th scope="col" class="px-6 py-3">Type</th>
+                   <th scope="col" class="px-6 py-3">Date</th>
+                <th scope="col" class="px-6 py-3">Action</th>
+              
+              
+              
+              </tr>
+            </thead>
+            <tbody id="tbody">
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+</section>
+          <script src="./form.js"></script>
+      </body>
+      </html>
