@@ -5,7 +5,7 @@ Expense Calculator
     a) Enter the Amount.
   	b) Provide a description in the Transaction Text field.
   	c) Select the type (Income / Expense)
-  	d) Select Date in the date picker.
+  	d) Select Date in the date picker. 
 2)	Add a Transaction
     a) Click the "Add" button to save the transaction.
     b) It will be displayed in the table below.
